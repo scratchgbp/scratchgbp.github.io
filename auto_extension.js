@@ -454,12 +454,23 @@
      		digitalWrite(2, HIGH);
       		digitalWrite(4, LOW);
       		analogWrite(3, speed*2.55);
-      	}		
+      	}
+	if (direction == 'prawo') {
+     		digitalWrite(7, HIGH);
+      		/*digitalWrite(8, LOW);*/
+      		analogWrite(5, speed*2.55);
+      	}	     
       	if (direction == 'tył') {
      		digitalWrite(2, LOW);
       		digitalWrite(4, HIGH);
       		analogWrite(3, speed*2.55);
       	}
+        if (direction == 'lewo') {
+     		digitalWrite(7, LOW);
+      		/*digitalWrite(8, HIGH);*/
+      		analogWrite(5, speed*2.55);
+      	}     
+
       	
     }
     
@@ -468,12 +479,23 @@
      		digitalWrite(7, HIGH);
       		digitalWrite(8, LOW);
       		analogWrite(5, speed*2.55);
-      	}		
+      	}
+	if (direction == 'prawo') {
+     		digitalWrite(7, HIGH);
+      		/*digitalWrite(8, LOW);*/
+      		analogWrite(5, speed*2.55);
+      	}	     
       	if (direction == 'tył') {
      		digitalWrite(7, LOW);
       		digitalWrite(8, HIGH);
       		analogWrite(5, speed*2.55);
       	}
+	if (direction == 'lewo') {
+     		digitalWrite(7, LOW);
+      		/*digitalWrite(8, HIGH);*/
+      		analogWrite(5, speed*2.55);
+      	}     
+
      }
 
   if (motor == 'M3') {
