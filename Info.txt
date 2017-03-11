@@ -1,0 +1,17 @@
+…lub utworzyć nowe repozytorium w wierszu poleceń
+
+echo "# Scratch2" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:scratchgbp/Scratch2.git
+git push -u origin master
+
+…lub pchania istniejącego repozytorium z wiersza poleceń
+
+git remote add origin git@github.com:scratchgbp/Scratch2.git
+git push -u origin master
+
+…lub importu z innego repozytorium kodu
+
+Można zainicjować tego repozytorium z kodem z projektu Subversion, Mercurial lub TFS.
