@@ -475,8 +475,37 @@
       		analogWrite(5, speed*2.55);
       	}
      }
+ /* M4 */
+ 	if (motor == 'M3') {
+		if (direction == 'przód') {
+     		digitalWrite(2, HIGH);
+      		digitalWrite(4, LOW);
+      		analogWrite(3, speed*2.55);
+      	}		
+      	if (direction == 'tył') {
+     		digitalWrite(2, LOW);
+      		digitalWrite(4, HIGH);
+      		analogWrite(3, speed*2.55);
+      	}
+      	
+    }
+    
+    if (motor == 'M4') {
+		if (direction == 'przód') {
+     		digitalWrite(7, HIGH);
+      		digitalWrite(8, LOW);
+      		analogWrite(5, speed*2.55);
+      	}		
+      	if (direction == 'tył') {
+     		digitalWrite(7, LOW);
+      		digitalWrite(8, HIGH);
+      		analogWrite(5, speed*2.55);
+      	}
+     }
  
+  
   };
+  
   
   ext.buzzer = function(stan) {
   
@@ -778,7 +807,7 @@
       outputs: ['on', 'off'],
       ops: ['>', '=', '<'],
       servos: ['servo A', 'servo B', 'servo C', 'servo D'],
-      silnik: ['M1','M2'],
+      silnik: ['M1','M2' 'M3','M4'],
       kierunek: ['przód', 'tył'],
       input: ['INPUT 1','INPUT 2','INPUT 3','INPUT 4'],
       output: ['OUTPUT 1','OUTPUT 2', 'OUTPUT 3', 'OUTPUT 4'],
