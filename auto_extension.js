@@ -476,6 +476,19 @@
       	}
      }
 
+  if (motor == 'M3') {
+		if (direction == 'przód') {
+     		digitalWrite(2, HIGH);
+      		digitalWrite(4, LOW);
+      		analogWrite(3, speed*2.55);
+      	}		
+      	if (direction == 'tył') {
+     		digitalWrite(2, LOW);
+      		digitalWrite(4, HIGH);
+      		analogWrite(3, speed*2.55);
+      	}
+ }  
+	  
 };
   
   
