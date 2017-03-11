@@ -505,6 +505,11 @@
       		digitalWrite(8, HIGH);
       		analogWrite(5, speed*2.55);
       	}
+	      	if (direction == 'lewo') {
+     		digitalWrite(7, LOW);
+      		/*digitalWrite(8, HIGH);*/
+      		analogWrite(5, speed*2.55);
+      	}     
      }
 	  
 	  
