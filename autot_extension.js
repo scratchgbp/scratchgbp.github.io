@@ -793,6 +793,6 @@
     url: 'http://scratchx.org'
   };
 
-  ScratchExtensions.register('Robotyka', descriptor, ext, {type:'serial'});
+  ScratchExtensions.register('Robotyka w scratchu', descriptor, ext, {type:'serial'});
 
 })({});
