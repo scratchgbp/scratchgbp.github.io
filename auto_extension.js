@@ -487,8 +487,7 @@
       		digitalWrite(4, HIGH);
       		analogWrite(3, speed*2.55);
       	}
-      	
-    }
+     }
     
     if (motor == 'M4') {
 		if (direction == 'przód') {
@@ -502,9 +501,7 @@
       		analogWrite(5, speed*2.55);
       	}
      }
- 
-  
-  };
+};
   
   
   ext.buzzer = function(stan) {
@@ -807,7 +804,7 @@
       outputs: ['on', 'off'],
       ops: ['>', '=', '<'],
       servos: ['servo A', 'servo B', 'servo C', 'servo D'],
-      silnik: ['M1','M2','M3','M4'],
+      silnik: ['M1','M2'],
       kierunek: ['przód', 'tył'],
       input: ['INPUT 1','INPUT 2','INPUT 3','INPUT 4'],
       output: ['OUTPUT 1','OUTPUT 2', 'OUTPUT 3', 'OUTPUT 4'],
