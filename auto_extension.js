@@ -470,8 +470,6 @@
       		/*digitalWrite(8, HIGH);*/
       		analogWrite(5, speed*2.55);
       	}     
-
-      	
     }
     
     if (motor == 'M2') {
@@ -495,7 +493,6 @@
       		/*digitalWrite(8, HIGH);*/
       		analogWrite(5, speed*2.55);
       	}     
-
      }
 
   if (motor == 'M3') {
@@ -544,6 +541,51 @@
       	}     
      }
 	  
+	if (motor == 'S1') {
+		if (direction == 'przód') {
+     		digitalWrite(2, HIGH);
+      		digitalWrite(4, LOW);
+      		analogWrite(3, speed*2.55);
+      	}
+	if (direction == 'prawo') {
+     		digitalWrite(7, HIGH);
+      		/*digitalWrite(8, LOW);*/
+      		analogWrite(5, speed*2.55);
+      	}	     
+      	if (direction == 'tył') {
+     		digitalWrite(2, LOW);
+      		digitalWrite(4, HIGH);
+      		analogWrite(3, speed*2.55);
+      	}
+        if (direction == 'lewo') {
+     		digitalWrite(7, LOW);
+      		/*digitalWrite(8, HIGH);*/
+      		analogWrite(5, speed*2.55);
+      	}     
+    }
+    
+    if (motor == 'S2') {
+		if (direction == 'przód') {
+     		digitalWrite(7, HIGH);
+      		digitalWrite(8, LOW);
+      		analogWrite(5, speed*2.55);
+      	}
+	if (direction == 'prawo') {
+     		digitalWrite(7, HIGH);
+      		/*digitalWrite(8, LOW);*/
+      		analogWrite(5, speed*2.55);
+      	}	     
+      	if (direction == 'tył') {
+     		digitalWrite(7, LOW);
+      		digitalWrite(8, HIGH);
+      		analogWrite(5, speed*2.55);
+      	}
+	if (direction == 'lewo') {
+     		digitalWrite(7, LOW);
+      		/*digitalWrite(8, HIGH);*/
+      		analogWrite(5, speed*2.55);
+      	}     
+     }
 	  
 };
   
@@ -848,7 +890,7 @@
       outputs: ['on', 'off'],
       ops: ['>', '=', '<'],
       servos: ['servo A', 'servo B', 'servo C', 'servo D'],
-      silnik: ['M1','M2','M3','M4'],
+      silnik: ['M1','M2','M3','M4','S1','S2'],
       kierunek: ['przód', 'tył','prawo','lewo'],
       input: ['INPUT 1','INPUT 2','INPUT 3','INPUT 4'],
       output: ['OUTPUT 1','OUTPUT 2', 'OUTPUT 3', 'OUTPUT 4'],
