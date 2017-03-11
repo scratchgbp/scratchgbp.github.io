@@ -494,7 +494,12 @@
      		digitalWrite(7, HIGH);
       		digitalWrite(8, LOW);
       		analogWrite(5, speed*2.55);
-      	}		
+      	}	
+	if (direction == 'prawo') {
+     		digitalWrite(7, HIGH);
+      		/*digitalWrite(8, LOW);*/
+      		analogWrite(5, speed*2.55);
+      	}	     
       	if (direction == 'tył') {
      		digitalWrite(7, LOW);
       		digitalWrite(8, HIGH);
@@ -807,7 +812,7 @@
       ops: ['>', '=', '<'],
       servos: ['servo A', 'servo B', 'servo C', 'servo D'],
       silnik: ['M1','M2','M3','M4'],
-      kierunek: ['przód', 'tył'],
+      kierunek: ['przód', 'tył','prawo'],
       input: ['INPUT 1','INPUT 2','INPUT 3','INPUT 4'],
       output: ['OUTPUT 1','OUTPUT 2', 'OUTPUT 3', 'OUTPUT 4'],
       stan: ['włączony', 'wyłączony']
