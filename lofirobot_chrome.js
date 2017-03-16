@@ -354,7 +354,7 @@
 			],
         menus: {
 
-      silnik: ['M1','M2'],
+      silnik: ['M1','M2','M4','M4'],
       kierunek: ['przód', 'tył'],
       input: ['INPUT 1','INPUT 2','INPUT 3','INPUT 4'],
       output: ['OUTPUT 1','OUTPUT 2', 'OUTPUT 3', 'OUTPUT 4'],
