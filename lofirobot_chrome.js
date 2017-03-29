@@ -94,7 +94,7 @@
   pinMode(9,PWM);
   pinMode(6,PWM);
 
-  pinMode(16,OUTPUT);
+  pinMode(13,OUTPUT);
   console.log("Pins initialized");
   }
 
