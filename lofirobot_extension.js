@@ -787,12 +787,63 @@
     
   };
 
-  var descriptor = {
-    blocks: blocks[lang],
-    menus: menus[lang],
-    url: 'http://www.lofirobot.com'
-  };
+  ext._getStatus = function() {
+        return {status: mStatus, msg: mStatus==2?'Ready':'Not Ready'};
+    };
+	ext._shutdown = function() {
+	    if(poller) poller = clearInterval(poller);
+	    status = false;
+	}
+    function getAppStatus() {
+        chrome.runtime.sendMessage(LOFI_ID, {message: "STATUS"}, function (response) {
+            if (response === undefined) { //Chrome app not found
+                console.log("Chrome app not found");
+                mStatus = 0;
+                setTimeout(getAppStatus, 1000);
+            }
+            else if (response.status === false) { //Chrome app says not connected
+                mStatus = 1;
+                setTimeout(getAppStatus, 1000);
+            }
+            else {// successfully connected
+                if (mStatus !==2) {
+                    console.log("Connected");
+                    mConnection = chrome.runtime.connect(LOFI_ID);
+                    mConnection.onMessage.addListener(onMsgApp);
 
-  //ScratchExtensions.register('LOFI Robot', descriptor, ext, {type:'serial'});
-    ScratchExtensions.register('LOFI Robot Chrome v4', descriptor, ext);
+                    //pinMode_init();
+                }
+                mStatus = 2;
+                setTimeout(getAppStatus, 1000);
+            }
+        });
+    };
+
+
+    function onMsgApp(msg) {
+		var buffer = msg.buffer;
+		//console.log(buffer);
+
+
+		if ( buffer[0]==224){
+		messageParser(buffer);
+		last_reading = 0;
+		}
+
+
+		if (buffer[0] != 224 && last_reading == 0){
+		    messageParser(buffer);
+		    last_reading = 1;
+		}
+
+
+
+
+    };
+
+    getAppStatus();
+
+
+
+	ScratchExtensions.register('LOFI Robot Chrome v4', descriptor, ext);
 })({});
