@@ -793,6 +793,6 @@
     url: 'http://www.lofirobot.com'
   };
 
-  ScratchExtensions.register('LOFI Robot', descriptor, ext, {type:'serial'});
-
+  //ScratchExtensions.register('LOFI Robot', descriptor, ext, {type:'serial'});
+    ScratchExtensions.register('LOFI Robot Chrome v4', descriptor, ext);
 })({});
