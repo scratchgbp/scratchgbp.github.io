@@ -59,9 +59,9 @@
 	pinmode[11] = 1;
 	pinmode[12] = 1;
 	pinmode[13] = 1;
-	pinmode[14] = 1;
-	pinmode[15] = 1;
-	pinmode[16] = 1;
+	//pinmode[14] = 1;
+	//pinmode[15] = 1;
+	//pinmode[16] = 1;
 
 
 	var msg1 = {};
